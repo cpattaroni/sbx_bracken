@@ -1,7 +1,6 @@
 rule bracken_classify_report:
     input:
-        expand(str(CLASSIFY_FP/'kraken2'/'{sample}.kreport'),
-               sample=Samples.keys())
+        str(CLASSIFY_FP/'kraken2'/'{sample}.kreport')
     output:
         str(CLASSIFY_FP/'bracken'/'{sample}.bracken')
     params:
