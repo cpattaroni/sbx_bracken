@@ -3,7 +3,7 @@ rule bracken_classify_report:
         expand(str(CLASSIFY_FP/'kraken2'/'{sample}.kreport'),
                sample=Samples.keys())
     output:
-        str(CLASSIFY_FP/'bracken'/{sample}.bracken)
+        str(CLASSIFY_FP/'bracken'/'{sample}.bracken')
     params:
         db = Cfg["sbx_bracken"]["db"],
         read_length = Cfg["sbx_bracken"]["read_length"],
