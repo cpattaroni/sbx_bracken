@@ -29,9 +29,9 @@ rule bracken_biom:
 
 rule classic_b_biom:
     input:
-        str(CLASSIFY_FP/'bracken'/'all_samples.biom')
+        str(CLASSIFY_FP/'bracken'/'all_samples_bracken.biom')
     output:
-        str(CLASSIFY_FP/'bracken'/'all_samples.tsv')
+        str(CLASSIFY_FP/'bracken'/'all_samples_bracken.tsv')
     shell:
         """
         biom convert -i {input} -o {output} \
@@ -41,4 +41,4 @@ rule classic_b_biom:
 
 rule all_bracken:
     input:
-        str(CLASSIFY_FP/'bracken'/'all_samples.tsv')
+        str(CLASSIFY_FP/'bracken'/'all_samples_bracken.tsv')
